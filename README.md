@@ -5,4 +5,4 @@ Rust offers memory safety without a garbage collector, enabling fast and reliabl
 [1] The Rust Programming Language. https://doc.rust-lang.org/book/
 <br/><br/>
 Status: In progress</i>
-
+Run: nix-shell
