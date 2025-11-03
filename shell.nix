@@ -4,6 +4,7 @@ pkgs.mkShell {
     alejandra
     cargo
     lolcat
-    rustc
+    rustup
+    
   ];
 }

@@ -8,10 +8,9 @@ async fn page_title(url: &str) -> Option<String> {
         .map(|title| title.inner_html())
 
     }
-}
 
 fn hello() -> String{
- return "hellow"
+ return "hellow".to_string()
 }
 
 fn main(){
@@ -22,6 +21,6 @@ fn main(){
     match page_title(url).await {
         Some(title) => println!("the title for {url} was {title}"),
         None => println!("{url} had not title"),
-    }   
+    } 
     println!(hello());
 })}
