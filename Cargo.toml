@@ -4,3 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+direnv = "0.1.1"
+rustfmt = "0.10.0"
+trpl = "0.3.0"

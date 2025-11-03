@@ -7,8 +7,8 @@ fn main(){
     let fruits: [&str; 3] = ["Apple", "Banana", "Orange"];
     println!("fruits array: {:?}", fruits);
     println!("fruits first element: {}", fruits[0]);
-    println!("fruits second element: {}", fruits[1]);
-    println!("fruits third element: {}", fruits[2]);
+    println!("fruits second element: {}", , fruits[1]);
+    println!("fruits third element: {}");
 
     // tuples
     let _human: (&str, i32, bool) = ("Alice", 30, true);

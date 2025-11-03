@@ -1,5 +1,5 @@
-{pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/06278c77b5d162e62df170fec307e83f1812d94b.tar.gz") {}}:
-pkgs.mkShellNoCC {
+{pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/11cb3517b3af6af300dd6c055aeda73c9bf52c48.tar.gz") {}}:
+pkgs.mkShell {
   packages = with pkgs; [
     alejandra
     cargo
