@@ -1037,6 +1037,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust_src"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e0641980f0ea1cc4cefdb37f23233aaf66118011c7304e77be94e75d6dfbc878"
+
+[[package]]
 name = "rustc-hash"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1095,6 +1101,7 @@ name = "rusttest"
 version = "0.1.0"
 dependencies = [
  "direnv",
+ "rust_src",
  "trpl",
 ]
 

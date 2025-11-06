@@ -5,5 +5,6 @@ edition = "2024"
 
 [dependencies]
 direnv = "0.1.1"
+rust_src = "0.0.0"
 
 trpl = "0.3.0"
