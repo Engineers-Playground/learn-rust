@@ -8,5 +8,16 @@
 // * Use a function that returns a tuple
 // * Destructure the return value into two variables
 // * Use an if..else if..else block to determine what to print
-
-fn main() {}
+fn coordinate() -> (i32, i32) {
+    (5, 6)
+}
+fn main() {
+    let (x, y) = coordinate();
+    if y == 5 {
+        print!("equal");
+    }else if y >= 5 {
+        print!("greater");
+    }else if y <= 5 {
+        print!("less");
+    }
+}
