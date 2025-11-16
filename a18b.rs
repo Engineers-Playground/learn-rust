@@ -96,8 +96,8 @@ fn authorize(
     employee_name: &str,
     location: ProtectedLocation,
 ) -> Result<AuthorizationStatus, String> {
-   let database = Database{};
-   match database.connect(){
+   let connect = Database::connect();
+   match connect {
        Ok(_) => return Ok(AuthorizationStatus::Allow),
        _ => return Err("oh something went wrong".to_owned())
     };
