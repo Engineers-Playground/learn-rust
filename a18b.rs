@@ -96,7 +96,11 @@ fn authorize(
     employee_name: &str,
     location: ProtectedLocation,
 ) -> Result<AuthorizationStatus, String> {
-    // put your code here
+   let database = Database{};
+   match database.connect(){
+       Ok(_) => return Ok(AuthorizationStatus::Allow),
+       _ => return Err("oh something went wrong".to_owned())
+    };
 }
 
 fn main() {
