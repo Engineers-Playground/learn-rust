@@ -96,19 +96,13 @@ fn authorize(
     employee_name: &str,
     location: ProtectedLocation,
 ) -> Result<AuthorizationStatus, String> {
-   let connect = Database::connect();
-   match connect {
-       Ok(_) => {
-           let database = Database{};
-           let employee =  database.find_employee(employee_name).unwrap();
-           let keycard = database.get_keycard(&employee);
-           if keycard.unwrap().access_level <= location.required_access_level() {
-             Ok(AuthorizationStatus::Deny)
-           } else {
-            Ok(AuthorizationStatus::Allow)
-           }
-        },
-       _ => Err("oh something went wrong".to_owned())
+    let database = Database::connect()?;
+    let employee = database.find_employee(employee_name)?;
+    let keycard = database.get_keycard(&employee)?;
+    if keycard.access_level <= location.required_access_level() {
+        Ok(AuthorizationStatus::Deny)
+    } else {
+        Ok(AuthorizationStatus::Allow)
     }
 }
 
