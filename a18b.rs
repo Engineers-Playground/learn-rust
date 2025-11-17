@@ -98,9 +98,18 @@ fn authorize(
 ) -> Result<AuthorizationStatus, String> {
    let connect = Database::connect();
    match connect {
-       Ok(_) => return Ok(AuthorizationStatus::Allow),
-       _ => return Err("oh something went wrong".to_owned())
-    };
+       Ok(_) => {
+           let database = Database{};
+           let employee =  database.find_employee(employee_name).unwrap();
+           let keycard = database.get_keycard(&employee);
+           if keycard.unwrap().access_level <= location.required_access_level() {
+             Ok(AuthorizationStatus::Deny)
+           } else {
+            Ok(AuthorizationStatus::Allow)
+           }
+        },
+       _ => Err("oh something went wrong".to_owned())
+    }
 }
 
 fn main() {
