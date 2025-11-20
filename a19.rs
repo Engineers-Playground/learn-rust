@@ -12,5 +12,35 @@
 //
 // Notes:
 // * Use a HashMap for the furniture store stock
-
-fn main() {}
+enum Items {
+    Chairs,
+    Beds,
+    Tables,
+    Couches,
+};
+struct Item {
+    name: Items,
+    num: i32,
+}
+impl Item {
+    fn item(&self) -> Result<Item, String> {
+        if &self.num > 0{
+            Ok(&self)
+        else {
+            Err("not left".to_owned)
+        }    }
+fn main() {
+    let i1 = Item{
+        name: Items.Chairs,
+        num: 5
+    };
+let i2 = Item{
+        name: Items.Beds,
+        num: 3
+    };
+let i3 = Item{
+        name: Items.Beds,
+        num: 3
+    };
+let mut stock = HashMap::new();
+}
