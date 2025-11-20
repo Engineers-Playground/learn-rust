@@ -12,35 +12,23 @@
 //
 // Notes:
 // * Use a HashMap for the furniture store stock
-enum Items {
-    Chairs,
-    Beds,
-    Tables,
-    Couches,
-};
-struct Item {
-    name: Items,
-    num: i32,
-}
-impl Item {
-    fn item(&self) -> Result<Item, String> {
-        if &self.num > 0{
-            Ok(&self)
-        else {
-            Err("not left".to_owned)
-        }    }
-fn main() {
-    let i1 = Item{
-        name: Items.Chairs,
-        num: 5
-    };
-let i2 = Item{
-        name: Items.Beds,
-        num: 3
-    };
-let i3 = Item{
-        name: Items.Beds,
-        num: 3
-    };
+
+use std::collections::HashMap;
+
+fn main(){
 let mut stock = HashMap::new();
+stock.insert("Chairs", 5);
+stock.insert("Beds", 3);
+stock.insert("Tables", 2);
+stock.insert("Couches", 0);
+let mut total = 0;
+for (items, c) in stock.iter() {
+    if c > &0 {
+        total=c+total;
+        println!("{:?}", c);
+    } else {
+        println!("out of stock");
+    }
+}
+println!("{:?}", total);
 }
