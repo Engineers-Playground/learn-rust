@@ -5,6 +5,5 @@ pkgs.mkShell {
     cargo
     lolcat
     rustup
-    
   ];
 }
