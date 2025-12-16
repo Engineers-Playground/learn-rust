@@ -9,6 +9,7 @@
 // * Use the println macro to display messages to the terminal
 
 // * Use a function to display your first name
+
 fn firstName(first_name: String) -> String {
     println!("{first_name}");
     first_name
